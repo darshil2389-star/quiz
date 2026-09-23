@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="QuizNova - Premium 3D Quiz Experience" />
+  <title>QuizNova | Premium 3D Quiz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="background">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-bg"></div>
+  </div>
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">🧠</span>
+      <span>Quiz<span>Nova</span></span>
+    </div>
+
+    <div class="nav-actions">
+      <button id="themeBtn" class="icon-btn" title="Toggle theme">🌙</button>
+      <button id="homeBtn" class="nav-btn">Home</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HOME -->
+    <section id="homePage" class="page active">
+
+      <div class="hero">
+        <div class="hero-badge">✨ PREMIUM QUIZ EXPERIENCE</div>
+
+        <h1>
+          Test Your
+          <span>Knowledge.</span>
+        </h1>
+
+        <p>
+          Challenge yourself with 200+ questions across multiple categories
+          in an immersive 3D quiz experience.
+        </p>
+
+        <button id="startBtn" class="primary-btn">
+          Start Quiz <span>→</span>
+        </button>
+
+        <div class="stats">
+          <div class="stat-card">
+            <strong>200+</strong>
+            <span>Questions</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>8</strong>
+            <span>Categories</span>
+          </div>
+
+          <div class="stat-card">
+            <strong>20s</strong>
+            <span>Per Question</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="categories-section">
+        <div class="section-heading">
+          <span>EXPLORE</span>
+          <h2>Choose Your Challenge</h2>
+        </div>
+
+        <div class="category-grid">
+
+          <button class="category-card" data-category="All">
+            <div class="category-icon">🔥</div>
+            <h3>All Categories</h3>
+            <p>200 Questions</p>
+          </button>
+
+          <button class="category-card" data-category="Science">
+            <div class="category-icon">🔬</div>
+            <h3>Science</h3>
+            <p>25 Questions</p>
+          </button>
+
+          <button class="category-card" data-category="Technology">
+            <div class="category-icon">💻</div>
+            <h3>Technology</h3>
+            <p>25 Questions</p>
+          </button>
+
+          <button class="category-card" data-category="Maths">
+            <div class="category-icon">➗</div>
+            <h3>Maths</h3>
+            <p>25 Questions</p>
+          </button>
+
+          <button class="category-card" data-category="GK">
+            <div class="category-icon">🌎</div>
+            <h3>General Knowledge</h3>
+            <p>25 Questions</p>
+          </button>
+
+          <button class="category-card" data-category="History">
+            <div class="category-icon">🏛️</div>
+            <h3>History</h3>
+            <p>25 Questions</p>
+          </button>
+
+          <button class="category-card" data-category="Geography">
+            <div class="category-icon">🗺️</div>
+            <h3>Geography</h3>
+            <p>25 Questions</p>
+          </button>
+
+          <button class="category-card" data-category="Sports">
+            <div class="category-icon">🏆</div>
+            <h3>Sports</h3>
+            <p>25 Questions</p>
+          </button>
+
+          <button class="category-card" data-category="Movies">
+            <div class="category-icon">🎬</div>
+            <h3>Movies</h3>
+            <p>25 Questions</p>
+          </button>
+
+        </div>
+      </section>
+
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quizPage" class="page">
+
+      <div class="quiz-container">
+
+        <div class="quiz-top">
+          <button id="quitBtn" class="quit-btn">← Quit</button>
+
+          <div class="quiz-category" id="quizCategory">
+            Science
+          </div>
+
+          <div class="timer">
+            <span>⏱</span>
+            <strong id="timer">20</strong>
+          </div>
+        </div>
+
+        <div class="progress-wrapper">
+          <div class="progress-info">
+            <span id="questionNumber">Question 1 of 20</span>
+            <span id="scoreText">Score: 0</span>
+          </div>
+
+          <div class="progress-bar">
+            <div id="progressBar"></div>
+          </div>
+        </div>
+
+        <div class="question-card">
+
+          <div class="question-number" id="questionBadge">
+            QUESTION 01
+          </div>
+
+          <h2 id="questionText">
+            Loading question...
+          </h2>
+
+          <div id="options" class="options"></div>
+
+          <button id="nextBtn" class="next-btn" disabled>
+            Next Question →
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RESULT -->
+    <section id="resultPage" class="page">
+
+      <div class="result-container">
+
+        <div class="result-icon">🏆</div>
+
+        <div class="result-label">QUIZ COMPLETED</div>
+
+        <h1>Your Result</h1>
+
+        <div class="score-circle">
+          <div>
+            <strong id="finalScore">0</strong>
+            <span>/ 20</span>
+          </div>
+        </div>
+
+        <h2 id="resultMessage">Great Job!</h2>
+
+        <p id="resultDescription">
+          You completed the quiz.
+        </p>
+
+        <div class="result-stats">
+
+          <div class="result-stat correct">
+            <span>✓</span>
+            <strong id="correctAnswers">0</strong>
+            <small>Correct</small>
+          </div>
+
+          <div class="result-stat wrong">
+            <span>✕</span>
+            <strong id="wrongAnswers">0</strong>
+            <small>Wrong</small>
+          </div>
+
+          <div class="result-stat accuracy">
+            <span>％</span>
+            <strong id="accuracy">0%</strong>
+            <small>Accuracy</small>
+          </div>
+
+        </div>
+
+        <div class="result-buttons">
+          <button id="retryBtn" class="primary-btn">
+            Try Again ↻
+          </button>
+
+          <button id="categoryBtn" class="secondary-btn">
+            Choose Category
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 QuizNova • Built for curious minds 🧠</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
